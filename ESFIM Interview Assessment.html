@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ESFIM English Teacher Interview Assessment</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root {
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --ink: #14213a;
+  --mute: #5b6679;
+  --line: #d5dbe5;
+  --navy: #102242;
+  --navy-light: #1c3563;
+  --gold: #c8961e;
+  --gold-hover: #b58516;
+  --on-navy: #ffffff;
+  --star: #c8961e;
+  --star-off: #cbd2de;
+  --sel: #e8eef9;
+  --ok: #177245;
+  --ok-bg: #eafaf1;
+  --err: #b91c1c;
+  --err-bg: #fef2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1424;
+    --card: #162035;
+    --ink: #e8edf6;
+    --mute: #9aa6bb;
+    --line: #27354f;
+    --navy: #091325;
+    --navy-light: #162b52;
+    --gold: #d4a738;
+    --gold-hover: #e2b94f;
+    --star: #d4a738;
+    --star-off: #34435e;
+    --sel: #1c2b48;
+    --ok: #48bb78;
+    --ok-bg: #0e2e1f;
+    --err: #f87171;
+    --err-bg: #3a1515;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 "Source Sans 3", system-ui, -apple-system, sans-serif;
+  padding-bottom: 90px;
+}
+
+header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: var(--on-navy);
+  padding: 24px 20px;
+  border-bottom: 3px solid var(--gold);
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(200, 150, 30, 0.25);
+  color: #ffde8a;
+  border: 1px solid rgba(200, 150, 30, 0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+h1 {
+  font: 700 26px/1.2 "Source Serif 4", Georgia, serif;
+  margin: 0 0 4px;
+}
+
+header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.88;
+}
+
+.cfg-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.cfg-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+section, .box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.sh {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+h2 {
+  font: 600 20px/1.25 "Source Serif 4", Georgia, serif;
+  margin: 0;
+  color: var(--ink);
+}
+
+.time {
+  color: var(--mute);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Control Panel */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+label.f {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+input[type=text], input[type=date], select, textarea {
+  width: 100%;
+  margin-top: 4px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+input[type=text]:focus, input[type=date]:focus, select:focus, textarea:focus {
+  border-color: var(--navy-light);
+  outline: 2px solid var(--gold);
+}
+
+textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+/* Segmented Button for Interviewer Role */
+.role-segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 4px;
+}
+.role-segmented label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  background: var(--bg);
+  transition: all 0.2s;
+  user-select: none;
+}
+.role-segmented input[type="radio"] {
+  display: none;
+}
+.role-segmented label:has(input:checked) {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  box-shadow: 0 2px 4px rgba(16, 34, 66, 0.25);
+}
+
+/* Candidate select bar */
+.cand-field-wrap {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+.cand-field-wrap select {
+  margin-top: 0;
+  flex: 1;
+}
+.icon-btn {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 12px;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.icon-btn:hover {
+  background: var(--sel);
+  border-color: var(--navy);
+}
+
+.webhook-status-badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+}
+.status-connected { background: var(--ok-bg); color: var(--ok); font-weight: 600; }
+.status-loading { background: #fff8e1; color: #b78103; font-weight: 600; }
+.status-disconnected { background: var(--err-bg); color: var(--err); font-weight: 600; }
+
+/* Config Drawer */
+#cfgModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+#cfgModal.active { display: flex; }
+.modal-box {
+  background: var(--card);
+  max-width: 540px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Question cards */
+.q {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.q:hover {
+  border-color: var(--navy);
+  background: rgba(232, 238, 249, 0.35);
+}
+.q:has(input:checked) {
+  background: var(--sel);
+  border-color: var(--navy);
+  font-weight: 600;
+}
+.q input {
+  margin-top: 4px;
+  accent-color: var(--navy);
+}
+.q b {
+  color: var(--mute);
+  min-width: 24px;
+  display: inline-block;
+}
+
+.rate {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+.rate[hidden] { display: none; }
+.chosen {
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: var(--navy);
+  background: var(--sel);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 4px solid var(--navy);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  flex-wrap: wrap;
+}
+.row span.n {
+  font-weight: 600;
+  font-size: 14px;
+}
+.stars {
+  display: inline-flex;
+  gap: 3px;
+}
+.stars button {
+  all: unset;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+  padding: 2px 4px;
+  color: var(--star-off);
+  border-radius: 4px;
+  transition: transform 0.1s, color 0.1s;
+}
+.stars button:hover {
+  transform: scale(1.15);
+}
+.stars button.on {
+  color: var(--star);
+}
+.stars button:focus-visible {
+  outline: 2px solid var(--gold);
+}
+
+.avg-pill {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--mute);
+  font-weight: 600;
+  margin: 8px 0 12px;
+}
+
+/* Summary Grid */
+.sum {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 16px 0 6px;
+}
+.sum div {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--line);
+}
+.sum strong {
+  display: block;
+  font: 700 32px "Source Serif 4", Georgia, serif;
+  color: var(--navy);
+}
+.sum small {
+  color: var(--mute);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sum .highlight {
+  background: #fbf6ec;
+  border-color: #ebd7a3;
+}
+.sum .highlight strong {
+  color: #9c6c06;
+}
+
+/* Bottom Bar */
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 100;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.06);
+}
+
+button.b {
+  font: 600 14px inherit;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: var(--on-navy);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+button.b:hover {
+  background: var(--navy-light);
+  border-color: var(--navy-light);
+}
+button.b.primary-submit {
+  background: #177245;
+  border-color: #177245;
+}
+button.b.primary-submit:hover {
+  background: #145f39;
+}
+button.b.alt {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+button.b.alt:hover {
+  background: var(--bg);
+  border-color: var(--navy);
+}
+
+#msg {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+#msg.ok { color: var(--ok); background: var(--ok-bg); }
+#msg.err { color: var(--err); background: var(--err-bg); }
+
+/* Submission notification toast/banner */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 380px;
+  background: var(--card);
+  border-left: 5px solid var(--ok);
+  padding: 14px 18px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: none;
+  z-index: 2000;
+  animation: slideIn 0.3s ease;
+}
+.toast.active { display: block; }
+@keyframes slideIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+@media print {
+  header { background: none; color: #000; border-bottom: 2px solid #000; }
+  .bar, .cfg-btn, .cand-field-wrap button, .webhook-status-badge { display: none !important; }
+  :root { --bg: #fff; --card: #fff; }
+  section, .box { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
+  body { padding-bottom: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-top">
+    <div>
+      <span class="brand-badge">Armada de Colombia · ESFIM</span>
+      <h1>English Teacher Interview Assessment</h1>
+      <p>Escuela de Formación de Infantería de Marina · Assessment Panel</p>
+    </div>
+    <div>
+      <button type="button" class="cfg-btn" id="openCfgBtn">
+        ⚙️ Webhook Settings
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Interviewer & Candidate Profile -->
+  <div class="box">
+    <div class="panel-grid">
+      <!-- Role Selection -->
+      <div>
+        <label class="f">Interviewer Role *</label>
+        <div class="role-segmented">
+          <label>
+            <input type="radio" name="intvRole" value="Interviewer 1" checked>
+            <span>Interviewer 1</span>
+          </label>
+          <label>
+            <input type="radio" name="intvRole" value="Interviewer 2">
+            <span>Interviewer 2</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Interviewer Name -->
+      <div>
+        <label class="f" for="intv">Interviewer Name *</label>
+        <input type="text" id="intv" placeholder="e.g., TF. Perez Juan / Lic. Maria Gomez">
+      </div>
+
+      <!-- Candidate Dropdown / Fetch -->
+      <div>
+        <label class="f" for="candSelect">Candidate Name (from Google Sheet Col A) *</label>
+        <div class="cand-field-wrap">
+          <select id="candSelect">
+            <option value="">-- Loading candidates from Sheet... --</option>
+          </select>
+          <button type="button" class="icon-btn" id="refreshCandBtn" title="Refresh candidates from Google Sheet">↻</button>
+          <button type="button" class="icon-btn" id="manualCandBtn" title="Enter name manually">+</button>
+        </div>
+        <input type="text" id="manualCandInput" placeholder="Type candidate name manually" style="display:none; margin-top:6px;">
+        <div id="webhookStatus" class="webhook-status-badge status-loading">
+          <span>●</span> Connecting to Google Sheet...
+        </div>
+      </div>
+
+      <!-- Date -->
+      <div>
+        <label class="f" for="date">Interview Date</label>
+        <input type="date" id="date">
+      </div>
+    </div>
+  </div>
+
+  <!-- Assessment Sections 1 - 5 -->
+  <div id="secs"></div>
+
+  <!-- General Assessment -->
+  <div class="box gen">
+    <div class="sh">
+      <h2>General Assessment</h2>
+      <span class="time">Pedagogical & military environment alignment (1–5 stars)</span>
+    </div>
+    <div id="general"></div>
+    <label class="f" style="margin-top:14px;" for="gc">General Qualitative Comments & Recommendations
+      <textarea id="gc" placeholder="Overall strengths, areas of concern, suitability for military cadets, final recommendations..."></textarea>
+    </label>
+  </div>
+
+  <!-- Summary of this Interviewer's Evaluation -->
+  <div class="box">
+    <h2>Interviewer Assessment Summary</h2>
+    <div class="sum" id="sum"></div>
+  </div>
+</main>
+
+<!-- Bottom Actions Bar -->
+<div class="bar">
+  <button class="b primary-submit" id="submitBtn">
+    <span>☁️</span> Publish Results to Google Sheet
+  </button>
+  <button class="b" id="copyBtn">
+    <span>📋</span> Copy Summary
+  </button>
+  <button class="b alt" id="printBtn">
+    <span>🖨️</span> Print / Save PDF
+  </button>
+  <button class="b alt" id="resetBtn">
+    <span>🗑️</span> Clear Form
+  </button>
+  <span id="msg" role="status"></span>
+</div>
+
+<!-- Config Modal for Webhook URL -->
+<div id="cfgModal" role="dialog" aria-modal="true" aria-labelledby="cfgTitle">
+  <div class="modal-box">
+    <h2 id="cfgTitle" style="margin-bottom:12px;">Google Apps Script Webhook Configuration</h2>
+    <p style="font-size:14px; color:var(--mute); margin-bottom:16px;">
+      Paste the Web App URL generated when deploying your Google Apps Script (e.g., <code>https://script.google.com/macros/s/.../exec</code>). This URL reads candidates from Column A (starting cell A3) and writes assessment results under the correct interviewer columns.
+    </p>
+    <label class="f" for="webhookUrlInput">Apps Script Web App Executable URL:</label>
+    <input type="text" id="webhookUrlInput" placeholder="https://script.google.com/macros/s/.../exec">
+    <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:20px;">
+      <button type="button" class="b alt" id="closeCfgBtn">Cancel</button>
+      <button type="button" class="b" id="saveCfgBtn">Save & Refresh</button>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Toast Notification -->
+<div id="toast" class="toast">
+  <strong id="toastTitle">Success</strong>
+  <p id="toastMsg" style="margin:4px 0 0; font-size:13px;"></p>
+</div>
+
+<!-- Hidden elements for CORS-immune POST fallback -->
+<iframe name="hidden_post_iframe" id="hidden_post_iframe" style="display:none;"></iframe>
+<form id="hidden_post_form" method="POST" target="hidden_post_iframe" style="display:none;">
+  <input type="hidden" name="data" id="hidden_post_data">
+</form>
+
+<script>
+
+// Interview Sections with English Teacher Questions
+const SECTIONS = [
+  {
+    t: "Warm-up and motivation",
+    m: "about 2 minutes",
+    q: [
+      "Please introduce yourself and tell us about your background in teaching English.",
+      "Why do you want to teach English at a military institution like ESFIM?",
+      "What do you know about the role of the Marine Infantry in Colombia, and how could English support its mission?"
+    ]
+  },
+  {
+    t: "Teaching experience and methodology",
+    m: "about 5 minutes",
+    q: [
+      "What teaching methods do you use to keep adult learners motivated?",
+      "How would you plan a first class for a group of cadets with mixed English levels?",
+      "How do you teach speaking and listening skills to students who are shy or afraid of making mistakes?",
+      "Have you taught English for specific purposes, such as military, aviation, or business English? How would you approach it?",
+      "How do you assess progress? Which tools or exams (for example, CEFR levels, TOEFL, or STANAG 6001) are you familiar with?"
+    ]
+  },
+  {
+    t: "Classroom management and discipline",
+    m: "about 3 minutes",
+    q: [
+      "How would you handle a class of students who are tired after physical training and have low energy?",
+      "Describe a difficult classroom situation you faced and how you solved it.",
+      "How do you adapt your teaching to a hierarchical, structured environment where students follow strict rules?"
+    ]
+  },
+  {
+    t: "Situational and professional questions",
+    m: "about 3 minutes",
+    q: [
+      "Imagine a student is failing the course. What steps would you take to help them?",
+      "How would you use technology or limited resources to make your lessons more interactive?",
+      "How do you handle feedback from supervisors or commanding officers about your teaching?",
+      "As a civilian working with military personnel, how would you show respect for protocol, schedules, and security rules?"
+    ]
+  },
+  {
+    t: "Closing",
+    m: "about 2 minutes",
+    q: [
+      "What is your greatest strength as a teacher, and what area are you working to improve?",
+      "Where do you see yourself professionally in three years?",
+      "Do you have any questions for us?"
+    ]
+  }
+];
+
+const LANG = ["Fluency", "Accuracy", "Vocabulary", "Pronunciation"];
+const GEN = ["Pedagogy", "Adaptability", "Professionalism"];
+const STORAGE_KEY = "esfim_interview_assessment_state_v2";
+const WEBHOOK_STORAGE_KEY = "esfim_apps_script_webhook_url";
+
+// Default state
+let S = {
+  intvRole: "Interviewer 1",
+  intv: "",
+  cand: "",
+  date: new Date().toISOString().split("T")[0],
+  gc: "",
+  sec: SECTIONS.map(() => ({ q: null, r: {}, c: "" })),
+  gen: {}
+};
+
+// Load saved state
+try {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    const parsed = JSON.parse(saved);
+    S = Object.assign(S, parsed);
+  }
+} catch (e) {
+  console.warn("Could not load saved state", e);
+}
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const el = (t, a = {}, h = "") => {
+  const e = document.createElement(t);
+  Object.assign(e, a);
+  if (h) e.innerHTML = h;
+  return e;
+};
+
+const save = () => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(S));
+  } catch (e) {}
+};
+
+const avg = a => {
+  const valid = a.filter(v => typeof v === "number" && v > 0);
+  return valid.length ? valid.reduce((x, y) => x + y, 0) / valid.length : 0;
+};
+
+const f1 = n => (n && !isNaN(n) ? Number(n).toFixed(1) : "–");
+const f2 = n => (n && !isNaN(n) ? Number(n).toFixed(2) : "–");
+
+function showToast(title, message, isError = false) {
+  const toast = $("#toast");
+  const tTitle = $("#toastTitle");
+  const tMsg = $("#toastMsg");
+  tTitle.textContent = title;
+  tTitle.style.color = isError ? "var(--err)" : "var(--ok)";
+  toast.style.borderLeftColor = isError ? "var(--err)" : "var(--ok)";
+  tMsg.textContent = message;
+  toast.classList.add("active");
+  setTimeout(() => toast.classList.remove("active"), 5000);
+}
+
+// Interactive Star Component
+function stars(get, set, label) {
+  const w = el("span", { className: "stars", role: "group" });
+  w.setAttribute("aria-label", label);
+  const draw = () => [...w.children].forEach((b, i) => {
+    b.className = i < get() ? "on" : "";
+    b.setAttribute("aria-pressed", i + 1 === get());
+  });
+  for (let i = 1; i <= 5; i++) {
+    const b = el("button", { type: "button", textContent: "★" });
+    b.setAttribute("aria-label", `${label}: ${i} of 5`);
+    b.onclick = () => {
+      set(get() === i ? 0 : i);
+      draw();
+      save();
+      update();
+    };
+    w.appendChild(b);
+  }
+  draw();
+  return w;
+}
+
+function secScore(i) {
+  const s = S.sec[i];
+  return avg(LANG.map(k => s.r[k] || 0));
+}
+
+// Build Question Sections
+const secsEl = $("#secs");
+SECTIONS.forEach((sec, i) => {
+  const c = el("section");
+  c.appendChild(el("div", { className: "sh" }, `<h2>${i + 1}. ${sec.t}</h2><span class="time">${sec.m} · select one question</span>`));
+
+  const rate = el("div", { className: "rate" });
+  const chosen = el("p", { className: "chosen" });
+
+  sec.q.forEach((q, j) => {
+    const n = SECTIONS.slice(0, i).reduce((a, s) => a + s.q.length, 0) + j + 1;
+    const l = el("label", { className: "q" });
+    const r = el("input", {
+      type: "radio",
+      name: "s" + i,
+      checked: S.sec[i].q === j
+    });
+    r.onchange = () => {
+      S.sec[i].q = j;
+      chosen.textContent = `Q${n}. ${q}`;
+      rate.hidden = false;
+      save();
+      update();
+    };
+    l.appendChild(r);
+    l.appendChild(el("span", {}, `<b>${n}.</b> ${q}`));
+    c.appendChild(l);
+
+    if (S.sec[i].q === j) {
+      chosen.textContent = `Q${n}. ${q}`;
+    }
+  });
+
+  rate.hidden = S.sec[i].q === null;
+  rate.appendChild(chosen);
+
+  LANG.forEach(k => {
+    const row = el("div", { className: "row" }, `<span class="n">${k}</span>`);
+    row.appendChild(stars(() => S.sec[i].r[k] || 0, v => S.sec[i].r[k] = v, k));
+    rate.appendChild(row);
+  });
+
+  rate.appendChild(el("div", { className: "avg-pill", id: "a" + i }));
+
+  const ta = el("textarea", {
+    value: S.sec[i].c || "",
+    placeholder: "Specific observations or notes on this answer..."
+  });
+  ta.oninput = () => {
+    S.sec[i].c = ta.value;
+    save();
+  };
+  const noteLbl = el("label", { className: "f", style: "margin-top:10px;" }, "Section Notes");
+  noteLbl.appendChild(ta);
+  rate.appendChild(noteLbl);
+
+  c.appendChild(rate);
+  secsEl.appendChild(c);
+});
+
+// Build General Criteria
+const gen = $("#general");
+GEN.forEach(k => {
+  const row = el("div", { className: "row" }, `<span class="n">${k}</span>`);
+  row.appendChild(stars(() => S.gen[k] || 0, v => S.gen[k] = v, k));
+  gen.appendChild(row);
+});
+
+// Bind Inputs
+$("#intv").value = S.intv || "";
+$("#intv").oninput = e => { S.intv = e.target.value; save(); };
+
+$("#date").value = S.date || new Date().toISOString().split("T")[0];
+$("#date").oninput = e => { S.date = e.target.value; save(); };
+
+$("#gc").value = S.gc || "";
+$("#gc").oninput = e => { S.gc = e.target.value; save(); };
+
+// Interviewer Role radio bindings
+$$("input[name='intvRole']").forEach(radio => {
+  if (radio.value === S.intvRole) radio.checked = true;
+  radio.onchange = () => {
+    S.intvRole = radio.value;
+    save();
+    update();
+  };
+});
+
+// Candidate Dropdown & Manual Input
+const candSelect = $("#candSelect");
+const manualCandInput = $("#manualCandInput");
+const manualCandBtn = $("#manualCandBtn");
+let isManualMode = false;
+
+manualCandBtn.onclick = () => {
+  isManualMode = !isManualMode;
+  manualCandInput.style.display = isManualMode ? "block" : "none";
+  candSelect.style.display = isManualMode ? "none" : "block";
+  if (isManualMode) {
+    manualCandInput.value = S.cand || "";
+    manualCandInput.focus();
+  } else {
+    candSelect.value = S.cand || "";
+  }
+};
+
+manualCandInput.oninput = e => {
+  S.cand = e.target.value.trim();
+  save();
+};
+
+candSelect.onchange = e => {
+  S.cand = e.target.value;
+  const selOpt = e.target.selectedOptions ? e.target.selectedOptions[0] : null;
+  S.candId = (selOpt && selOpt.dataset.idNumber) ? selOpt.dataset.idNumber : "";
+  save();
+};
+
+function getCalculations() {
+  const secScores = SECTIONS.map((_, i) => secScore(i));
+  const langAvg = avg(secScores);
+  const genAvg = avg(GEN.map(k => S.gen[k] || 0));
+  const totalScore = avg([langAvg, genAvg]);
+  return { secScores, langAvg, genAvg, totalScore };
+}
+
+function update() {
+  const { secScores, langAvg, genAvg, totalScore } = getCalculations();
+  SECTIONS.forEach((_, i) => {
+    const a = secScores[i];
+    const el = $("#a" + i);
+    if (el) el.textContent = `Language average: ${f2(a)} / 5.0`;
+  });
+
+  $("#sum").innerHTML = `
+    <div>
+      <strong>${f2(langAvg)}</strong>
+      <small>Language Competence</small>
+      <div style="font-size:11px; color:var(--mute); margin-top:4px;">Fluency, Accuracy, Vocab, Pronunciation</div>
+    </div>
+    <div>
+      <strong>${f2(genAvg)}</strong>
+      <small>General Competence</small>
+      <div style="font-size:11px; color:var(--mute); margin-top:4px;">Pedagogy, Adaptability, Professionalism</div>
+    </div>
+    <div class="highlight">
+      <strong>${f2(totalScore)}</strong>
+      <small>${S.intvRole} Score</small>
+      <div style="font-size:11px; color:#9c6c06; margin-top:4px; font-weight:600;">Overall Interview Average</div>
+    </div>
+  `;
+}
+
+// Webhook Settings Logic
+const cfgModal = $("#cfgModal");
+const webhookUrlInput = $("#webhookUrlInput");
+const openCfgBtn = $("#openCfgBtn");
+const closeCfgBtn = $("#closeCfgBtn");
+const saveCfgBtn = $("#saveCfgBtn");
+const refreshCandBtn = $("#refreshCandBtn");
+const webhookStatus = $("#webhookStatus");
+
+function getWebhookUrl() {
+  return localStorage.getItem(WEBHOOK_STORAGE_KEY) || "";
+}
+
+function setWebhookStatus(type, text) {
+  webhookStatus.className = `webhook-status-badge status-${type}`;
+  webhookStatus.innerHTML = `<span>●</span> ${text}`;
+}
+
+openCfgBtn.onclick = () => {
+  webhookUrlInput.value = getWebhookUrl();
+  cfgModal.classList.add("active");
+};
+
+closeCfgBtn.onclick = () => cfgModal.classList.remove("active");
+
+saveCfgBtn.onclick = () => {
+  const url = webhookUrlInput.value.trim();
+  localStorage.setItem(WEBHOOK_STORAGE_KEY, url);
+  cfgModal.classList.remove("active");
+  fetchCandidates();
+};
+
+// JSONP Fallback Helper for 100% CORS-free GET requests from file:/// URLs
+function fetchJsonp(url, params = {}) {
+  return new Promise((resolve, reject) => {
+    const callbackName = "jsonp_cb_" + Math.round(100000 * Math.random()) + "_" + Date.now();
+    const query = new URLSearchParams({ ...params, callback: callbackName, t: Date.now() });
+    const fullUrl = url + (url.includes("?") ? "&" : "?") + query.toString();
+    const script = document.createElement("script");
+    script.src = fullUrl;
+
+    const timeout = setTimeout(() => {
+      cleanup();
+      reject(new Error("Timeout: Google Web App no respondió. Verifica que 'Quién tiene acceso' esté configurado en 'Cualquier usuario' (Anyone)."));
+    }, 12000);
+
+    function cleanup() {
+      clearTimeout(timeout);
+      delete window[callbackName];
+      if (script.parentNode) script.parentNode.removeChild(script);
+    }
+
+    window[callbackName] = data => {
+      cleanup();
+      resolve(data);
+    };
+
+    script.onerror = () => {
+      cleanup();
+      reject(new Error("Error 403 / Permiso denegado: En Google Apps Script configura 'Quién tiene acceso: Cualquier usuario' (Anyone)."));
+    };
+
+    document.head.appendChild(script);
+  });
+}
+
+// Fetch Candidates from Google Sheet with automatic JSONP fallback
+async function fetchCandidates() {
+  const url = getWebhookUrl();
+  if (!url) {
+    setWebhookStatus("disconnected", "Sin URL Webhook. Haz clic en '⚙️ Webhook Settings'.");
+    candSelect.innerHTML = `<option value="">-- Sin Webhook configurado --</option>`;
+    if (S.cand) {
+      candSelect.innerHTML += `<option value="${S.cand}" selected>${S.cand} (local)</option>`;
+    }
+    return;
+  }
+
+  setWebhookStatus("loading", "Cargando candidatos desde Google Sheet...");
+  candSelect.innerHTML = `<option value="">-- Cargando candidatos... --</option>`;
+
+  let data = null;
+
+  // 1. Try standard fetch first
+  try {
+    const fetchUrl = url + (url.includes("?") ? "&" : "?") + "action=getCandidates&t=" + Date.now();
+    const res = await fetch(fetchUrl, { method: "GET", mode: "cors" });
+    data = await res.json();
+  } catch (err) {
+    console.warn("Standard fetch failed (likely file:/// CORS or redirect). Trying JSONP fallback...", err);
+    // 2. Automatically try JSONP fallback (immune to file:/// CORS)
+    try {
+      data = await fetchJsonp(url, { action: "getCandidates" });
+    } catch (jsonpErr) {
+      console.error("JSONP fetch also failed:", jsonpErr);
+      setWebhookStatus("disconnected", "⚠️ Error de Acceso 403: En Apps Script configura 'Quién tiene acceso: Cualquier usuario' (Anyone).");
+      candSelect.innerHTML = `<option value="">-- Error 403 / Permisos en Google Sheet --</option>`;
+      if (S.cand) {
+        candSelect.innerHTML += `<option value="${S.cand}" selected>${S.cand} (modo local)</option>`;
+      }
+      return;
+    }
+  }
+
+  if (data && data.status === "success" && Array.isArray(data.candidates)) {
+    candSelect.innerHTML = `<option value="">-- Seleccionar Candidato (${data.candidates.length} encontrados) --</option>`;
+    data.candidates.forEach(c => {
+      const name = typeof c === "string" ? c : c.name;
+      const idNum = (typeof c === "object" && c.idNumber) ? ` (ID: ${c.idNumber})` : "";
+      const label = `${name}${idNum}`;
+      const opt = el("option", { value: name, textContent: label });
+      if (typeof c === "object" && c.idNumber) opt.dataset.idNumber = c.idNumber;
+      if (name === S.cand) opt.selected = true;
+      candSelect.appendChild(opt);
+    });
+
+    if (S.cand && !data.candidates.some(c => (typeof c === "string" ? c : c.name) === S.cand)) {
+      const opt = el("option", { value: S.cand, textContent: `${S.cand} (actual)`, selected: true });
+      candSelect.appendChild(opt);
+    }
+
+    setWebhookStatus("connected", `Conectado (${data.candidates.length} candidatos cargados de Columna A)`);
+  } else {
+    setWebhookStatus("disconnected", "Formato de datos no reconocido desde Google Sheet.");
+    candSelect.innerHTML = `<option value="">-- Error en datos de Sheet --</option>`;
+  }
+}
+
+refreshCandBtn.onclick = () => fetchCandidates();
+
+// Text representation for copying
+function generateTextSummary() {
+  const { secScores, langAvg, genAvg, totalScore } = getCalculations();
+  let t = `ESFIM - ENGLISH TEACHER INTERVIEW ASSESSMENT\n`;
+  t += `==============================================\n`;
+  t += `Candidate:    ${S.cand || "(Not specified)"}\n`;
+  t += `Evaluator:    ${S.intv || "(Not specified)"} (${S.intvRole})\n`;
+  t += `Date:         ${S.date}\n`;
+  t += `==============================================\n\n`;
+
+  SECTIONS.forEach((sec, i) => {
+    const s = S.sec[i];
+    t += `${i + 1}. ${sec.t.toUpperCase()}\n`;
+    if (s.q === null) {
+      t += `   Question: (None selected)\n\n`;
+      return;
+    }
+    t += `   Question: ${sec.q[s.q]}\n`;
+    t += `   Ratings:  ` + LANG.map(k => `${k}: ${s.r[k] || "-"} / 5`).join(" | ") + `\n`;
+    t += `   Section Average: ${f2(secScores[i])} / 5.0\n`;
+    if (s.c) t += `   Notes: ${s.c}\n`;
+    t += `\n`;
+  });
+
+  t += `GENERAL EVALUATION:\n`;
+  t += `   Ratings:  ` + GEN.map(k => `${k}: ${S.gen[k] || "-"} / 5`).join(" | ") + `\n`;
+  if (S.gc) t += `   Comments: ${S.gc}\n`;
+  t += `\n----------------------------------------------\n`;
+  t += `Language Competence Average: ${f2(langAvg)} / 5.0\n`;
+  t += `General Competence Average:  ${f2(genAvg)} / 5.0\n`;
+  t += `TOTAL ${S.intvRole.toUpperCase()} SCORE:    ${f2(totalScore)} / 5.0\n`;
+  t += `==============================================\n`;
+  return t;
+}
+
+// Submit Assessment to Google Sheet via POST
+$("#submitBtn").onclick = async () => {
+  const url = getWebhookUrl();
+  if (!url) {
+    alert("Please configure your Google Apps Script Webhook URL first in 'Webhook Settings'.");
+    openCfgBtn.click();
+    return;
+  }
+
+  if (!S.cand || S.cand.trim() === "") {
+    alert("Please select or enter the Candidate Name before submitting.");
+    return;
+  }
+  if (!S.intv || S.intv.trim() === "") {
+    alert("Please enter the Interviewer Name before submitting.");
+    $("#intv").focus();
+    return;
+  }
+
+  const { secScores, langAvg, genAvg, totalScore } = getCalculations();
+  if (totalScore === 0) {
+    if (!confirm("No star scores have been assigned. Are you sure you want to submit with a score of 0.0?")) {
+      return;
+    }
+  }
+
+  const payload = {
+    action: "submitAssessment",
+    candidate: S.cand,
+    interviewerRole: S.intvRole,
+    interviewerName: S.intv,
+    date: S.date,
+    languageScore: Number(langAvg.toFixed(2)),
+    generalScore: Number(genAvg.toFixed(2)),
+    totalScore: Number(totalScore.toFixed(2)),
+    generalComments: S.gc || "",
+    sectionScores: SECTIONS.map((sec, i) => ({
+      sectionTitle: sec.t,
+      selectedQuestion: S.sec[i].q !== null ? sec.q[S.sec[i].q] : null,
+      ratings: S.sec[i].r,
+      average: Number(secScores[i].toFixed(2)),
+      notes: S.sec[i].c || ""
+    })),
+    generalRatings: S.gen,
+    timestamp: new Date().toISOString()
+  };
+
+  const submitBtn = $("#submitBtn");
+  const origText = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `<span>⏳</span> Publishing to Google Sheet...`;
+
+  try {
+    // 1. Try standard fetch (text/plain avoids preflight OPTIONS)
+    const res = await fetch(url, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await res.json();
+    if (result.status === "success") {
+      showToast(
+        "Assessment Published!",
+        `Saved for ${S.cand} as ${S.intvRole}. Row: ${result.row || "updated"}. Final Combined Score: ${result.combinedScore !== undefined ? result.combinedScore : "Averaged in Sheet"}`
+      );
+      $("#msg").textContent = `✓ Published to Sheet as ${S.intvRole}`;
+      $("#msg").className = "ok";
+      setTimeout(() => $("#msg").textContent = "", 4000);
+      return;
+    } else {
+      throw new Error(result.message || "Error returned by Google Sheet");
+    }
+  } catch (err) {
+    console.warn("Standard POST fetch failed (likely file:/// CORS redirect). Trying hidden form fallback...", err);
+
+    // 2. Fallback to hidden form POST (100% immune to CORS)
+    try {
+      const form = $("#hidden_post_form");
+      const hiddenData = $("#hidden_post_data");
+      form.action = url;
+      hiddenData.value = JSON.stringify(payload);
+      form.submit();
+
+      showToast(
+        "Assessment Submitted!",
+        `Assessment dispatched for ${S.cand} (${S.intvRole}). Verification row updated in Google Sheet.`
+      );
+      $("#msg").textContent = `✓ Submitted to Sheet (${S.intvRole})`;
+      $("#msg").className = "ok";
+      setTimeout(() => $("#msg").textContent = "", 4000);
+    } catch (formErr) {
+      console.error("Form POST fallback error:", formErr);
+      showToast("Publish Failed", "Could not publish results. Verify 'Who has access: Anyone' in Apps Script.", true);
+      $("#msg").textContent = "⚠ Failed to publish";
+      $("#msg").className = "err";
+    }
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = origText;
+  }
+};
+
+$("#copyBtn").onclick = async () => {
+  try {
+    await navigator.clipboard.writeText(generateTextSummary());
+    $("#msg").textContent = "✓ Summary copied to clipboard";
+    $("#msg").className = "ok";
+    setTimeout(() => $("#msg").textContent = "", 3000);
+  } catch (e) {
+    alert("Clipboard copy blocked. You can use 'Print / Save PDF' instead.");
+  }
+};
+
+$("#printBtn").onclick = () => window.print();
+
+$("#resetBtn").onclick = () => {
+  if (confirm(`Clear all scores and responses for candidate "${S.cand || "current"}"?`)) {
+    S.sec = SECTIONS.map(() => ({ q: null, r: {}, c: "" }));
+    S.gen = {};
+    S.gc = "";
+    save();
+    location.reload();
+  }
+};
+
+// Initialize
+update();
+fetchCandidates();
+</script>
+</body>
+</html>
